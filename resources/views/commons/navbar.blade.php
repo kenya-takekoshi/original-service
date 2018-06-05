@@ -12,8 +12,18 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">新規登録</a></li>
-                    <li><a href="#">ログイン</a></li>
+                    <li>
+                        <a href="{{ route('signup.get') }}">
+                            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                            新規登録
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+                            ログイン
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
