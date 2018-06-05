@@ -5,7 +5,9 @@
         <div class="cover-inner">
             <div class="cover-contents">
                 <h1>素敵な音楽と出会う空間</h1>
-                <a href="" class="btn btn-success btn-lg">Music Boxを始める</a>
+                @if (!Auth::check())
+                    <a href="{{ route('signup.get') }}" class="btn btn-success btn-lg">Music Boxを始める</a>
+                @endif
             </div>
         </div>
     </div>
