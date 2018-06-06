@@ -14,10 +14,10 @@
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::check())
                         <li>
-                            <a href="#">
+                            <a href="{{ route('items.create') }}">
                                 <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
                                 音楽を追加
-                              </a>
+                            </a>
                         </li>
 
                         <li class="dropdown">
