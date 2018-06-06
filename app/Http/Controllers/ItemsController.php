@@ -41,4 +41,15 @@ class ItemsController extends Controller
             'items' => $items,
         ]);
     }
+    
+    public function show($id)
+    {
+      $item = Item::find($id);
+      $favorite_users = $item->favorite_users;
+
+      return view('items.show', [
+          'item' => $item,
+          'favorite_users' => $favorite_users,
+      ]);
+    }
 }

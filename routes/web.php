@@ -20,7 +20,13 @@ Route::post('signup', 'Auth\RegisterController@register')->name('signup.post');
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login')->name('login.post');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
-// 商品検索
+
 Route::group(['middleware' => ['auth']], function () {
-    Route::resource('items', 'ItemsController', ['only' => ['create']]);
+    // 商品検索
+    Route::resource('items', 'ItemsController', ['only' => ['create', 'show']]);
+    // お気に入り登録
+    Route::post('favorite', 'ItemUserController@favorite')->name('item_user.favorite');
+    Route::delete('favorite', 'ItemUserController@unfavorite')->name('item_user.unfavorite');
+    // マイページ
+    Route::resource('users', 'UsersController', ['only' => ['show']]);
 });
